@@ -24,6 +24,7 @@ header{
     background-color:#333333;
     position:fixed;
     top:0;
+    z-index:9000;
     /*nav stylings */
 }
 .logo_container{
@@ -155,7 +156,6 @@ nav a:hover{
 .mission_text{
     display:flex;
     flex-direction:column;
-    border:2px solid red;
     color:white;
     font-family:"Cooper Hewit", sans-serif;
     text-align:center;
@@ -166,13 +166,83 @@ nav a:hover{
     font-weight: 900;
 }
 .mission_text h4{
-    font-size:2rem;
-    font-weight:600;
+    font-size:1.3rem;
+    font-weight:300;
 }
 .mission_text p{
     font-size:1.3rem;
-    font-weight:600;
+    font-weight:300;
 }
+.mission_image_container{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    margin-top:1%;
+}
+.mission_image{
+    position:relative;
+    max-width: 822px;
+    height:auto;
+    margin:1%;
+}
+.mission_image2{
+    position:relative;
+    max-width: 822px;
+    height:auto;
+    margin:1%;
+}
+.actual_image{
+    position:block;
+    max-width:100%;
+    height:auto;
+}
+.actual_image2{
+    position:block;
+    max-width:100%;
+    height:auto;
+
+}
+.image_description{
+    text-align:center;
+    font-size: 1.5rem;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.image_description2{
+    text-align:center;
+    font-size: 1.5rem;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.image_overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    color:white;
+    opacity:0;
+    transition:opacity 0.3s;
+}
+.image_overlay >*{
+    transform: translateY(20px);
+    transition:transform 0.3s;
+}
+.image_overlay:hover{
+    opacity:1;
+}
+.image_overlay:hover >*{
+    transform:translateY(0);
+}
+
 
 @media only screen and (min-width:800px){
     /* nav stylings at 800px */
@@ -243,5 +313,11 @@ nav a:hover{
     }
     .banner_text h3{
         font-size:3rem;
+    }
+    .mission_image_container{
+        width:100%;
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
     }
 }
